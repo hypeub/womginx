@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="shortcut icon" type="image/png" href="logo.png" />
+    <title>Womginx - Hyperbyte</title>
+
+  <style>
+    body {
+      width: 100vw;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      display: none;
+    }
+
+    #loader {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #4158D0;
+  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  border-radius: 0;
+  gap: 15px;
+}
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid white;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: white transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+  </style>
+</head>
+<body>
+  <div id="loader">
+          <div class="lds-ring"><div></div><div></div><div></div></div>
+          <div style="display: flex; justify-content: center; flex-direction: column;">
+          <p style="font-size: 2rem; font-weight: 500; margin-bottom: 0;">Loading...</p>
+          <p style="font-size: 1rem; font-weight: 500; margin-top: 0;" id="url-disp">Please head to <a href="https://max.despair73.repl.co/">Hyperbyte Max</a> to use this unblocker.</p>
+          </div>
+        </div>
+    <div class="container">
+        <img src="logo-full.png" width="250" height="250">
+        <div>
+            <script>
+                function go() {
+                    var input = document.getElementById('url-target');
+                    if (input.value) {
+                        window.location.href = '/main/' + input.value;
+                    } else {
+                        alert('Please provide a link. It does not require https://.');
+                    }
+                }
+            </script>
+            <span class="w3-xlarge">Input your URL here: </span>
+            <div>
+                <input class="w3-xlarge" type='text' placeholder='https://www.google.com' id='url-target'
+                    onkeydown='if(event.key==="Enter") go()' />
+                <button onclick='go()' class="w3-xlarge">Go!</button>
+            </div>
+            <br>
+            <br>
+            </p>
+            <p class="w3-medium">View GitHub source <a class="w3-medium" href="https://github.com/binary-person/womginx" target="_blank">here</a></p>
+        </div>
+    </div>
+</body>
+
+</html>
